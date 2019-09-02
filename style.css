@@ -1,0 +1,439 @@
+/*Configurações gerais*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+		font-family: 'Roboto', sans-serif;;
+}
+
+img {
+	max-width: 100%;	
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.titulo {
+	margin-top: 60px;
+	margin-bottom: 40px;
+	letter-spacing: .1em;
+	text-align: center;
+	font-size: 40px;
+	color: #000;		
+}
+
+.titulo-branco {
+	margin-top: 60px;
+	margin-bottom: 40px;
+	letter-spacing: .1em;
+	text-align: center;
+	font-size: 40px;
+	color: #fff;	
+}
+
+.titulo:after{
+	content: "";
+	display: block;
+	width: 60px;
+	height: 2px;
+	border: 2px solid #000;
+	margin: 2px auto 15px auto;;
+}
+
+.titulo-branco:after{
+	content: "";
+	display: block;
+	width: 60px;
+	height: 2px;
+	border: 2px solid #fff;
+	margin: 2px auto 15px auto;;
+}
+
+.subtitulo {
+	font-size: 24px;
+	text-align: center;
+	color: #fff;
+}
+
+.btn {
+	color: #c0c0c0;
+	text-transform: uppercase;
+	background: none;
+	border: 3px solid #c0c0c0;
+	padding: 10px 30px;
+	font-style: 14px;
+	line-height: 20px;
+	letter-spacing: .1em;
+	font-weight: bold;
+}
+
+.btn:hover {
+	border-color: #000;
+	color: #000;
+}
+
+/*Header*/
+
+header {
+	position: relative;
+}
+
+.logo {
+	width: 100%;
+	height: 180px;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	background-color: #000;	
+}
+
+.logo img {
+	max-width: 100%;
+}
+
+.nav-bar {
+	width: 100%;
+	height: 50px;
+	background-color: #c0c0c0;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	z-index: 5;
+}
+
+.nav-bar ul {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+}
+
+.nav-bar li {
+	width: 200px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-top: 15px;
+}
+
+.nav-bar li a {
+	color: #000;
+	letter-spacing: 0.9px;
+	font-size: 16px;
+}
+
+.nav-bar li a:hover {
+	color: #fff;
+}
+
+	.nav-bar li a:hover::after {
+	content: "";
+	display: block;
+	width: 30px;
+	height: 3px;
+	background: #fff;
+	margin: 2px auto;
+}
+
+.abs-pos {
+	position: absolute;
+	top: 180;
+	right: 0;
+}
+
+.fix-pos {
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+
+.ghost {
+	width: 100%;
+	height: 50px;
+	background-color: #fff;
+}
+
+
+/*Main Section*/
+
+main section:nth-child(odd) {
+	height: auto;
+	background-color: #fff;
+}
+
+main section:nth-child(even) {
+	height: auto;
+	background-color: #000;
+}
+
+/*Início*/
+
+
+/* Slide */
+.slider ul li img {
+	border-radius: 20px;
+}
+
+[data-slide] {
+  position: relative;
+}
+[data-slide] > * {
+  position: absolute;
+  top: 20px;
+  opacity: 0;
+}
+[data-slide] > .active {
+  position: relative;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+[data-slide-nav] {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+[data-slide-nav] > button {
+  display: inline-block;
+  width: 18px;
+  margin: 4px;
+  height: 18px;
+  border: none;
+  padding: 0px;
+  border-radius: 10px;
+  background: #c0c0c0;
+  text-indent: -10000px;
+	overflow: hidden;
+	outline: none;
+}
+[data-slide-nav] > button.active {
+	background: #000;
+	outline: none;
+}
+
+/*Quem Somos*/
+
+#quem-somos h1 {
+	margin-top: 60px;
+	text-align: center;
+	font-size: 40px;
+}
+
+#quem-somos img {
+	margin-top: 20px;
+}
+
+#quem-somos .quem-somos-texto {
+	margin-top: 20px;
+	color:#fff;
+}
+
+/*Área de atuação*/
+
+
+.cards li {
+	height: 340px;
+	background: #d2d2d2;	
+	text-align: center;
+	box-shadow: 0 5px #000;
+	margin-bottom: 20px;
+}
+
+.card-titulo {
+	width: 100%;
+	height: 60px;
+	font-weight: none;
+	background: #000;
+	padding-top: 15px;
+}
+
+.card-meio {
+	height: 340px;
+	background: #d2d2d2;	
+	text-align: center;
+	box-shadow: 0 5px #000;
+	margin-bottom: 20px;
+}
+
+.card-titulo-meio {
+	width: 100%;
+	height: 80px;
+	font-weight: none;
+	background: #000;
+	padding-top: 10px;
+}
+
+.card-corpo {
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+
+
+/*Orçamento*/
+
+.tipo-de-servico select {
+	display: block;
+	font-size: 18px;
+	line-height: 25px;
+	margin-bottom: 4px;
+	width: 100%;
+	height: 30px;
+	font-size: 20px;
+	background: #f2f2f3;
+	outline: none;
+}
+
+.contato_form {
+	padding-right: 20px;
+}
+
+.contato_form label {
+	display: block;
+	font-size: 18px;
+	line-height: 25px;
+	margin-bottom: 4px;
+}
+
+.contato_form input{
+	display: block;
+	width: 100%;
+	border: 4px solid #c0c0c0;
+	background: none;
+	padding: 7px 10px;
+	margin-bottom: 10px;
+	outline: none;
+	font-size: 14px;
+	font-family: Georgia, "Times New Roman", serif 
+}
+
+.form_right {
+	margin-top: 14px;
+}
+
+.form_right label {
+	display: block;
+	font-size: 18px;
+	line-height: 25px;
+	margin-bottom: 4px;
+}
+
+.form_right input{
+	display: block;
+	width: 50%;
+	border: 4px solid #c0c0c0;
+	background: none;
+	padding: 7px 10px;
+	margin-bottom: 10px;
+	outline: none;
+	font-size: 14px;
+	font-family: Georgia, "Times New Roman", serif 
+}
+
+.form_textarea textarea {
+	display: block;
+	width: 100%;
+	height: 120px;
+	border: 4px solid #c0c0c0;
+	background: none;
+	padding: 7px 10px;
+	margin-bottom: 20px;
+	outline: none;
+	font-size: 14px;
+	font-family: Georgia, "Times New Roman", serif 
+}
+
+.form_textarea label {
+	display: block;
+	font-size: 18px;
+	line-height: 25px;
+	margin-bottom: 4px;
+}
+
+#orcamento .btn {
+	text-align: center;	
+	margin-bottom: 20px;
+	outline: none;
+}
+
+.footer {
+	width: 100%;
+	height: 50px;
+	background-color: #c0c0c0;
+}
+
+.footer p {
+	text-align: center;
+	padding-top: 15px;
+}
+/* Responsivo */
+
+/* Smartphones */
+@media only screen and (max-width: 787px) {
+	.container {
+	width: 300px;
+}
+
+.logo {
+	height: 180px; 
+}
+
+.nav-bar {
+	width: 100%;
+	height: 50px;
+	display: block;
+}
+	
+.nav-bar li {
+	margin-top: 5px;
+}
+	
+
+.nav-bar li a:hover::after {
+	display: none;
+}
+
+.int-link {
+	display: flex;
+	flex-grow: 1;
+}
+
+.nav-bar ul li:nth-child(4) {
+	text-align: center;
+}
+
+.nav-bar li a {
+	color: #000;
+	font-size: 16px;
+}
+
+.nav-bar ul li a {
+	padding-bottom: 0;
+}
+
+.ghost {
+	width: 0;
+	height: 40px;
+}
+
+
+#inicio {
+	height: auto;
+}
+
+.footer p {
+	text-align: center;
+	padding-top: 15px;
+}
+
+}
+
+
+	

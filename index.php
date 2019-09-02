@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/style.css">
     <script>document.documentElement.classList.add("js")</script>
-    <title>JR Arquitetura</title>
+    <title>JF Arquitetura</title>
 </head>
 <body>
 	
