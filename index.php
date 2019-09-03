@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="style.css">
     <script>document.documentElement.classList.add("js")</script>
     <title>JF Arquitetura</title>
 </head>
@@ -14,7 +14,7 @@
 	
 		<header>
 			<div id="index" class="logo">
-				<img src="img/logo.jpg" alt="JF Arquitetura">
+				<img src="logo.jpg" alt="JF Arquitetura">
 			</div>
 			<nav class="nav-bar abs-pos">
 				<ul>
@@ -32,9 +32,9 @@
 					<div class="container">
 						<div class="slider">
 								<ul data-slide="principal">
-									<li><img src="img/slide1.jpg" alt="Casa 1"></li>
-									<li><img src="img/slide2.jpg" alt="Casa 2"></li>
-									<li><img src="img/slide3.jpg" alt="Casa 3"></li>
+									<li><img src="slide1.jpg" alt="Casa 1"></li>
+									<li><img src="slide2.jpg" alt="Casa 2"></li>
+									<li><img src="slide3.jpg" alt="Casa 3"></li>
 								</ul>
 						</div>
 					</div>
@@ -43,7 +43,7 @@
 		<section id="quem-somos">
 			<div class="container">
 					<h1 class="titulo-branco">Quem Somos</h1>
-						<div class="grid-8"><img src="img/exemplo.png" alt="Funcionários"></div>
+						<div class="grid-8"><img src="exemplo.png" alt="Funcionários"></div>
 						<div class="grid-8 quem-somos-texto">
 							<h2>Nossa História</h2>
 							<p>
@@ -196,8 +196,8 @@
 			</footer>
  </main>
 
-<script type="text/javascript" src="js/simple-slide"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="simple-slide"></script>
+<script type="text/javascript" src="script.js"></script>
     
 </body>
 </html>
