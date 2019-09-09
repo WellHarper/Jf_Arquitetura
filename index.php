@@ -215,8 +215,8 @@
  </main>
 
 
-<script type="text/javascript" src="simple-slide"></script>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="js/simple-slide"></script>
+<script type="text/javascript" src="js/script.js"></script>
   
     
 </body>
