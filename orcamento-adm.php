@@ -80,7 +80,7 @@
 						<td>
 						<!-- Button trigger modal -->
 							
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-predio="<?php echo $nome_predio ?>" data-telefone="<?php echo $telefone ?>" data-celular="<?php echo $cel ?>" data-email="<?php echo $email ?>" data-whatever="<?php echo $nome_cli ?>">Mais informações</button>
+							<button type="button" class="btn btn-dark ml-4" data-toggle="modal" data-target="#exampleModal" data-predio="<?php echo $nome_predio ?>" data-telefone="<?php echo $telefone ?>" data-celular="<?php echo $cel ?>" data-email="<?php echo $email ?>" data-whatever="<?php echo $nome_cli ?>">+</button>
 
 
 							
@@ -126,7 +126,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="btn btn-success">Baixar</button>
       </div>
     </div>
   </div>
