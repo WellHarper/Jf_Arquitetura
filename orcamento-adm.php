@@ -80,7 +80,7 @@
 						<td>
 						<!-- Button trigger modal -->
 							
-							<button type="button" class="btn btn-dark ml-4" data-toggle="modal" data-target="#exampleModal" data-predio="<?php echo $nome_predio ?>" data-telefone="<?php echo $telefone ?>" data-celular="<?php echo $cel ?>" data-email="<?php echo $email ?>" data-whatever="<?php echo $nome_cli ?>">+</button>
+							<button type="button" class="btn btn-dark ml-4" data-toggle="modal" data-apart="<?php echo $apart ?>" data-and="<?php echo $and ?>" data-tipo="<?php echo $tipo ?>" data-end="<?php echo $end ?>" data-target="#exampleModal" data-predio="<?php echo $nome_predio ?>" data-telefone="<?php echo $telefone ?>" data-celular="<?php echo $cel ?>" data-email="<?php echo $email ?>" data-whatever="<?php echo $nome_cli ?>">+</button>
 
 
 							
@@ -119,9 +119,23 @@
             <input type="text" disabled class="form-control" id="predio-name">
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label for="recipient-name" class="col-form-label">Endereço do Predio/Casa:</label>
+            <input type="text" disabled class="form-control" id="end-name">
           </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Tipo de Serviço:</label>
+            <input type="text" disabled class="form-control" id="tipo-name">
+          </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Andares:</label>
+            <input type="text" disabled class="form-control" id="and-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Apartamentos ou Salas:</label>
+            <input type="text" disabled class="form-control" id="apart-name">
+          </div>
+        
+        
         </form>
       </div>
       <div class="modal-footer">
@@ -154,14 +168,22 @@
   var telefone= button.data('telefone')
   var celular= button.data('celular')
   var predio = button.data('predio')
-
+  var end = button.data('end')
+  var tipo = button.data('tipo')
+  var and = button.data('and')
+  var apart = button.data('apart')
   var modal = $(this)
   modal.find('.modal-title').text(recipient)
   modal.find('.modal-body input').val(recipient)
   modal.find('.modal-body #email-name').val(email)
   modal.find('.modal-body #telefone-name').val(telefone)  
   modal.find('.modal-body #celular-name').val(celular) 
-  modal.find('.modal-body #predio-name').val(predio)        
+  modal.find('.modal-body #predio-name').val(predio)
+  modal.find('.modal-body #end-name').val(end)   
+  modal.find('.modal-body #tipo-name').val(tipo)
+  modal.find('.modal-body #and-name').val(and)
+  modal.fidn('.modal-body #apart-name').val(apart)        
+        
 })
     
 </script>

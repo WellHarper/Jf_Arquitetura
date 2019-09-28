@@ -7,22 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="owl.carousel.css">
-    <link rel="stylesheet" href="owl.carousel.min.css">
-    <link rel="stylesheet" href="owl.theme.default.min.css">
-    <link rel="stylesheet" href="estilo.css">
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script> 
-    <script type="text/javascript" src="js/jquery.mask.js"></script>
-    <script type="text/javascript">
-       $(document).ready(function(){    
-       $("#tel").mask("(000)0000-0000");
-       $("#cel").mask("(000)00000-0000");       
-           })
-        
-    
-    
-    
-    </script>
+		<script type="text/javascript" src="js/jquery.mask.js"></script>
     <script>document.documentElement.classList.add("js")</script>
     <title>JF Arquitetura</title>
 </head>
@@ -46,20 +32,13 @@
 		<main>
 			<section id="inicio">
 					<div class="container">
-<!--						<div class="slider">
+						<div class="slider">
 								<ul data-slide="principal">
-									<li><img src="img/slide1.jpg" alt="Casa 1">
-									</li>
-									<li><img src="img/slide2.jpg" alt="Casa 2"></li>
-									<li><img src="img/slide3.jpg" alt="Casa 3"></li>
+									<li><img src="img/1.jpg" alt="Casa 1"></li>
+									<li><img src="img/2.jpg" alt="Casa 2"></li>
+									<li><img src="img/3.jpg" alt="Casa 3"></li>
 								</ul>
-						</div>-->
-						<div class="owl-carousel owl-theme">
-                            <div style="height: 500px;" class="item fundo"> 
-                            <h1>OLÁ MUNDÃO</h1>
-                            <h3>OLA MUNDINHO</h3>
-                            </div>
-                      </div>
+						</div>
 					</div>
 				</section>
 
@@ -178,7 +157,7 @@
 				<div class="container">
 					<h1 class="titulo">Orçamento</h1>
 					
-					<h2 class="subtitulo-preto">Atendemos apenas no Rio e Grande Rio</h2>
+					<h2 class="subtitulo-preto">Atendemos apenas no Rio e Grande Rio</h3>
 					
 					<form action="recebe.php" method="post">
 					
@@ -207,13 +186,13 @@
 							<label for="">Tipo de serviço *</label>
 							<select name="tipo" id="" required>
 								<option value="" disabled selected>Selecione</option>
-								<option value="Autovistoria">Autovistoria Predial</option>
-								<option value="Laudo Técnico">Laudo Técnico</option>
-								<option value="Laudo Técnico de Recebimento de Obra">Laudo Técnico de Recebimento de Obra</option>
-								<option value="Laudo Técnico de Reforma">Laudo Técnico de Reforma</option>
-								<option value="Laudo Técnico de Vizinhança">Laudo Técnico de Vizinhança</option>
-								<option value="Laudo Técnico de Edificio em Gatiporantia">Laudo Técnico de Edifício em Garantia</option>
-								<option value="Laudo de Vistoria Locativa">Vistoria Locativa</option>
+								<option value="">Autovistoria Predial</option>
+								<option value="">Laudo Técnico</option>
+								<option value="">Laudo Técnico de Recebimento de Obra</option>
+								<option value="">Laudo Técnico de Reforma</option>
+								<option value="">Laudo Técnico de Vizinhança</option>
+								<option value="">Laudo Técnico de Edifício em Garantia</option>
+								<option value="">Vistoria Locativa</option>
 							</select>
 						</div>
 					</div>
@@ -245,9 +224,6 @@
  </main>
 
 <script type="text/javascript" src="js/simple-slide"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script src="owl.carousel.js"></script>
-<script src="owl.carousel.min.js"></script>    
-<script src="carousel.js"></script>
+<script type="text/javascript" src="js/script.js"></script>    
 </body>
 </html>

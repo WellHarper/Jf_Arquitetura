@@ -60,6 +60,12 @@ a {
 	color: #fff;
 }
 
+.subtitulo-preto {
+	font-size: 24px;
+	text-align: center;
+	color: #000;
+}
+
 .btn {
 	color: #c0c0c0;
 	text-transform: uppercase;
@@ -173,6 +179,9 @@ main section:nth-child(even) {
 
 /*Início*/
 
+#inicio {
+	padding: 40px 0;
+}
 
 /* Slide */
 .slider ul li img {
@@ -218,6 +227,10 @@ main section:nth-child(even) {
 }
 
 /*Quem Somos*/
+
+#quem-somos {
+	padding-bottom: 60px;
+}
 
 #quem-somos h1 {
 	margin-top: 60px;
@@ -271,13 +284,22 @@ main section:nth-child(even) {
 
 .card-corpo {
 	text-align: center;
-	margin: 0 auto;
+	margin: 10px;
+	font-size: 18px;
 }
 
 
 
 
 /*Orçamento*/
+
+.form { 
+	width: 100%;
+}
+
+.tipo-de-servico label {
+	margin-top: 85px;
+}
 
 .tipo-de-servico select {
 	display: block;
@@ -311,11 +333,10 @@ main section:nth-child(even) {
 	margin-bottom: 10px;
 	outline: none;
 	font-size: 14px;
-	font-family: Georgia, "Times New Roman", serif 
 }
 
 .form_right {
-	margin-top: 14px;
+	margin-top: 5px;
 }
 
 .form_right label {
@@ -334,7 +355,6 @@ main section:nth-child(even) {
 	margin-bottom: 10px;
 	outline: none;
 	font-size: 14px;
-	font-family: Georgia, "Times New Roman", serif 
 }
 
 .form_textarea textarea {
@@ -347,7 +367,6 @@ main section:nth-child(even) {
 	margin-bottom: 20px;
 	outline: none;
 	font-size: 14px;
-	font-family: Georgia, "Times New Roman", serif 
 }
 
 .form_textarea label {
@@ -358,10 +377,12 @@ main section:nth-child(even) {
 }
 
 #orcamento .btn {
-	text-align: center;	
+	float: right;	
 	margin-bottom: 20px;
 	outline: none;
 }
+
+/*Rodapé*/
 
 .footer {
 	width: 100%;
@@ -373,6 +394,97 @@ main section:nth-child(even) {
 	text-align: center;
 	padding-top: 15px;
 }
+
+/*Administrador*/
+
+#form_adm {
+	background: #000;
+	height: 100vh;
+}
+
+#form_adm h2 {
+	padding-top: 20px;
+}
+
+.form-card {
+	border: 2px solid #ccc;
+	padding: 20px;
+}
+
+#form_adm form {
+	width: 100%;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	padding: 20px 0;
+}
+
+#form_adm form label {
+	color: #fff;
+	display: block;
+	font-size: 18px;
+	line-height: 25px;
+	margin-bottom: 4px;
+}
+
+#form_adm form input {
+	display: block;
+	width: 100%;
+	border: 4px solid #c0c0c0;
+	background: none;
+	padding: 7px 10px;
+	margin-bottom: 10px;
+	outline: none;
+	font-size: 14px;
+	font-family: Georgia, "Times New Roman", serif;
+	color: #fff;
+}
+
+#form_adm button {
+	float: right;
+	margin-top: 10px;
+}
+
+#form_adm a {
+	color: #c0c0c0;
+	background: none;
+	margin-top: 15px;
+	padding-right: 15px;
+	float: left;
+	font-style: 12px;
+	line-height: 20px;
+	letter-spacing: .1em;
+	font-weight: bold;
+	outline: none;
+}
+
+#form_adm a:hover {
+	text-decoration: underline;
+}
+
+#form_adm .btn-adm{
+	color: #c0c0c0;
+	text-transform: uppercase;
+	background: none;
+	border: 3px solid #c0c0c0;
+
+	padding: 5px;
+	font-style: 14px;
+	line-height: 20px;
+	letter-spacing: .1em;
+	font-weight: bold;
+	outline: none;
+}
+
+#form_adm .btn-adm:hover {
+	border-color: #dcdcdc;
+	color: #dcdcdc;
+}
+
+/*Controle dos Orçamentos*/
+
+
+
 /* Responsivo */
 
 /* Smartphones */
@@ -426,6 +538,11 @@ main section:nth-child(even) {
 
 #inicio {
 	height: auto;
+}
+
+.cards li:last-child {
+	position: initial;
+	margin-bottom: 60px;
 }
 
 .footer p {
