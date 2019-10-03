@@ -1,12 +1,40 @@
 
 <?php
+session_start();
+include 'conexao.php';
+
 
  if(isset($_POST['nome'])) {
-$nome = $_POST["nome"];
+     if(empty($_POST['nome'])){
+		$_SESSION['vazio_nome'] = "Campo nome é obrigatório";
+		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
+		echo "
+			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
+		";
+	}else
+     {
+		//$_SESSION['value_nome'] = $nome = $_POST['nome'];
+        $nome = $_POST["nome"];
+	}
  }
+
+
  if(isset($_POST['email'])) {
-$email = $_POST["email"];
+
+     if(empty($email)){
+		$_SESSION['vazio_email'] = "Campo email é obrigatório";
+		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
+		echo "
+			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
+		";
+	}else{
+		//$_SESSION['value_email'] = $email = $_POST['email'];
+        $email = $_POST["email"];
+	}
  }
+
+
+
  if(isset($_POST['predio'])) {
 $predio = $_POST["predio"];
  }
@@ -63,7 +91,6 @@ $status = 0;
 
 
 
-include 'conexao.php';
 
 $sql = "INSERT INTO orcamento VALUES (null, '{$tipo}', '{$nome}','{$predio}', '{$email}', '{$andares}','{$aps}','{$end}','{$elev}','{$idade}','{$tel}','{$cel}','{$detalhe}', '{$status}')";
 
@@ -80,6 +107,8 @@ $sql = "INSERT INTO orcamento VALUES (null, '{$tipo}', '{$nome}','{$predio}', '{
         echo("ERROU");
         
     }
+
+
 
 
     

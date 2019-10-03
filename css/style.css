@@ -1,10 +1,10 @@
 /*Configurações gerais*/
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-		font-family: 'Roboto', sans-serif;;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;;
 }
 
 img {
@@ -42,7 +42,7 @@ a {
 	width: 60px;
 	height: 2px;
 	border: 2px solid #000;
-	margin: 2px auto 15px auto;;
+	margin: 2px auto 15px auto;
 }
 
 .titulo-branco:after{
@@ -51,7 +51,7 @@ a {
 	width: 60px;
 	height: 2px;
 	border: 2px solid #fff;
-	margin: 2px auto 15px auto;;
+	margin: 2px auto 15px auto;
 }
 
 .subtitulo {
@@ -95,7 +95,8 @@ header {
 	display: grid;
 	justify-content: center;
 	align-content: center;
-	background-color: #000;	
+	background-color: #000;
+	z-index: 10;	
 }
 
 .logo img {
@@ -109,7 +110,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	z-index: 5;
+	z-index: 1000;
 }
 
 .nav-bar ul {
@@ -136,8 +137,7 @@ header {
 .nav-bar li a:hover {
 	color: #fff;
 }
-
-	.nav-bar li a:hover::after {
+.nav-bar li a:hover::after {
 	content: "";
 	display: block;
 	width: 30px;
@@ -177,116 +177,237 @@ main section:nth-child(even) {
 	background-color: #000;
 }
 
-/*Início*/
-
-#inicio {
-	padding: 40px 0;
-}
 
 /* Slide */
-.slider ul li img {
-	border-radius: 20px;
+.owl-prev {
+  left: 10px;
 }
-
-[data-slide] {
-  position: relative;
+.owl-next {
+  right: 10px;
 }
-[data-slide] > * {
+.owl-prev,
+.owl-next {
   position: absolute;
-  top: 20px;
-  opacity: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
-[data-slide] > .active {
-  position: relative;
-  opacity: 1;
-  transition: opacity 500ms;
+owl-prev:hover,
+.owl-prev:active,
+.owl-prev:focus,
+.owl-next:hover,
+.owl-next:active,
+.owl-next:focus {
+  outline: 0;
 }
 
-[data-slide-nav] {
-  display: block;
-  justify-content: center;
-  text-align: center;
+#wrapper{
+	position: relative; 
+	height: 100vh;
+}
+#slider-area{
+  width: 100%;
+	margin: 0 auto;
+	padding: 0px;
+	position: relative;
+	z-index: 10;
+}
+
+#slider-area .owl-item div{
+    height: 100vh;
+    width: 100%;
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position: 50% 50%;
+	z-index: 1000;
+}
+.slider-text{
+    position: absolute;
+    left: 30%;
+    z-index: 20;
+    top: 30%;
+    text-align: center;  
+}
+.slider-text h2 {
+    text-transform: uppercase;
+    font-size: 70px;
+    margin: 0 auto;
+    text-shadow: 2px 2px #c0c0c0;
+    margin-bottom: 20px;
+    color: #000;
+}
+.slider-text p{
+  font-size: 20px;
+  color: 000;
+  font-weight: bold;
+  text-shadow: 1px 1px #c0c0c0;
+  margin: 0 auto;
+}
+.slider-text a{
+  color: #c0c0c0;
+  text-transform: uppercase;
+  background: none;
+  border: 3px solid #c0c0c0;
+  padding: 10px 30px;
+  font-style: 14px;
+  line-height: 20px;
+  letter-spacing: .1em;
   margin-top: 30px;
-}
-[data-slide-nav] > button {
+  background: #000;
   display: inline-block;
-  width: 18px;
-  margin: 4px;
-  height: 18px;
-  border: none;
-  padding: 0px;
-  border-radius: 10px;
-  background: #c0c0c0;
-  text-indent: -10000px;
-	overflow: hidden;
-	outline: none;
-}
-[data-slide-nav] > button.active {
-	background: #000;
-	outline: none;
+  color: #fff;
+  z-index: 1000;
 }
 
-/*Quem Somos*/
+.slider-text a:hover {
+  border: 3px solid #000;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Quem Somos*/
 
 #quem-somos {
-	padding-bottom: 60px;
+  padding: 40px 0;
 }
 
-#quem-somos h1 {
-	margin-top: 60px;
-	text-align: center;
-	font-size: 40px;
+.quem-somos-texto {
+  color: #fff;
 }
 
-#quem-somos img {
-	margin-top: 20px;
-}
-
-#quem-somos .quem-somos-texto {
-	margin-top: 20px;
-	color:#fff;
-}
 
 /*Área de atuação*/
 
+#area-de-atuacao {
+	margin-bottom: 60px;
+}
 
 .cards li {
-	height: 340px;
-	background: #d2d2d2;	
+	height: 150px;
+	width: 300px;
+	background:#d2d2d2;
 	text-align: center;
-	box-shadow: 0 5px #000;
+	border: 5px solid white;
+	box-shadow: 0 0 0 5px black;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.titulo-mais-info:visited {
+	color: black;
+}
+
+.titulo-mais-info:link {
+	color: black;
+}
+
+ .card-titulo {
+	padding-top: 40px;
+}
+
+.card-titulo:nth-child(4) {
+	padding-top 100px;
+}
+
+.titulo-mais-info:hover{
+	color: white;
+	cursor: pointer;
+}
+
+.titulo-mais-info:hover::after {
+	content: "";
+	display: block;
+	width: 30px;
+	height: 3px;
+	background: #fff;
+	margin: 2px auto;
+}
+
+/* Modal */
+
+.modal-container {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background: rgba(0,0,0,.5);
+	top: 0;
+	left: 0;
+	z-index: 2000;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-container.mostrar {
+	display: flex;
+	
+}
+
+.modal {
+	background: white;
+	width: 40%;
+	height: auto;
+	min-width: 300px;
+	padding: 40px;
+	border: 10px solid black;
+	box-shadow: 0 0 0 10px #c0c0c0;
+	position: relative;
+	padding-bottom: 20px;
+}
+
+@keyframes modal {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -60px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.mostrar .modal {
+	animation: modal .3s;
+}
+
+.fechar {
+	position: absolute;
+	top: -30px;
+	right: -30px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 4px solid black;
+	font-weight: bold;
+	background: white;
+	color: black;
+	cursor: pointer;
+	box-shadow: 0 4px 4px 0 rbga(0,0,0,.3);
+	outline: none;
+}
+
+.modal-corpo {
+	margin: 0 auto;
+}
+
+.modal-corpo img {
+	max-width: 100%;
+	margin-bottom: 10px;
+	border-radius: 70%;
+	box-shadow: 5px 5px 5px ;
+}
+
+.modal-corpo h3 {
+	margin-bottom: 5px
+}
+
+.modal-corpo p {
 	margin-bottom: 20px;
 }
 
-.card-titulo {
-	width: 100%;
-	height: 60px;
-	font-weight: none;
-	background: #000;
-	padding-top: 15px;
-}
-
-.card-meio {
-	height: 340px;
-	background: #d2d2d2;	
-	text-align: center;
-	box-shadow: 0 5px #000;
-	margin-bottom: 20px;
-}
-
-.card-titulo-meio {
-	width: 100%;
-	height: 80px;
-	font-weight: none;
-	background: #000;
-	padding-top: 10px;
-}
-
-.card-corpo {
-	text-align: center;
-	margin: 10px;
-	font-size: 18px;
-}
 
 
 
@@ -539,6 +660,15 @@ main section:nth-child(even) {
 #inicio {
 	height: auto;
 }
+  
+.slider-text{
+    position: absolute;
+    left: 10%;
+    z-index: 20;
+    top: 20%;
+    text-align: center;  
+}
+  
 
 .cards li:last-child {
 	position: initial;

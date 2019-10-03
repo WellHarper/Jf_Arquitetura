@@ -84,7 +84,7 @@
 
 
 							
-						<?</td>
+						</td>
 						<td><?php echo $status ?></td>
 
 				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -182,7 +182,7 @@
   modal.find('.modal-body #end-name').val(end)   
   modal.find('.modal-body #tipo-name').val(tipo)
   modal.find('.modal-body #and-name').val(and)
-  modal.fidn('.modal-body #apart-name').val(apart)        
+  modal.find('.modal-body #apart-name').val(apart)        
         
 })
     
