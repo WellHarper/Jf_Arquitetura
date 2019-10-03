@@ -13,23 +13,23 @@ include 'conexao.php';
 		";
 	}else
      {
-		//$_SESSION['value_nome'] = $nome = $_POST['nome'];
-        $nome = $_POST["nome"];
+		$_SESSION['value_nome'] = $nome = $_POST['nome'];
+        
 	}
  }
 
 
  if(isset($_POST['email'])) {
 
-     if(empty($email)){
+     if(!empty($email)){
 		$_SESSION['vazio_email'] = "Campo email é obrigatório";
 		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";
 	}else{
-		//$_SESSION['value_email'] = $email = $_POST['email'];
-        $email = $_POST["email"];
+		$_SESSION['value_email'] = $email = $_POST['email'];
+        
 	}
  }
 
@@ -90,26 +90,21 @@ $status = 0;
 
 
 
+if(!empty($nome) && !empty($email)){
+    
+
+
 
 
 $sql = "INSERT INTO orcamento VALUES (null, '{$tipo}', '{$nome}','{$predio}', '{$email}', '{$andares}','{$aps}','{$end}','{$elev}','{$idade}','{$tel}','{$cel}','{$detalhe}', '{$status}')";
 
- if (mysqli_query($con, $sql)) {
-       
-     echo ("boa");
-       
-       
+
+$msg = (mysqli_query($con, $sql)) ? "Gravado com sucesso" : "Erro ao gravar";
+
+header("location:msg.php?msg=".$msg);
+
 }
 
-    else {
-        
-        
-        echo("ERROU");
-        
-    }
-
-
-
-
+   
     
 ?>    
