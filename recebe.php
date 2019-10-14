@@ -21,7 +21,7 @@ include 'conexao.php';
 
  if(isset($_POST['email'])) {
 
-     if(!empty($email)){
+     if(empty($_POST['email'])){
 		$_SESSION['vazio_email'] = "Campo email é obrigatório";
 		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
 		echo "
@@ -35,62 +35,85 @@ include 'conexao.php';
 
 
 
- if(isset($_POST['predio'])) {
-$predio = $_POST["predio"];
- }
+// if(isset($_POST['predio'])) {
+//$predio = $_POST["predio"];
+// }
  if(isset($_POST['tel'])) {
-   $tel = $_POST["tel"];
-   
- $tel = str_replace('(', '', $tel);
- 
-  $tel = str_replace(')', '', $tel);
-  
- $tel = str_replace('-', '', $tel);
+ $tel = $_POST["tel"];
      
+     $_SESSION['value_tel'] = $tel;
 
-  
-
+     $tel = str_replace('(', '', $tel);
+     
+     $tel = str_replace(')', '', $tel);
+     
+     $tel = str_replace('-', '', $tel);
+     
+     
  }
- if(isset($_POST['cel'])) {
-$cel = $_POST["cel"];
-     
-    
-     
-     $cel = str_replace('(', '', $cel);
- 
+// if(isset($_POST['cel'])) {
+
+
+     if(empty($_POST['cel'])){
+		$_SESSION['vazio_cel'] = "Campo celular é obrigatório";
+		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
+		echo "
+			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
+		";
+	}else{
+        $cel = $_POST["cel"];
+		$_SESSION['value_cel'] = $cel;
+         
+  $cel = str_replace('(', '', $cel);
+
   $cel = str_replace(')', '', $cel);
+ 
+  $cel = str_replace('-', '', $cel);     
+        
+	}
+    
   
- $cel = str_replace('-', '', $cel);
-     
-     
- }
- if(isset($_POST['endereco'])) {
-$end = $_POST["endereco"];
- }
- if(isset($_POST['tipo'])) {
-$tipo = $_POST["tipo"];
- }
- if(isset($_POST['andares'])) {
-$andares = $_POST["andares"];
- }
- if(isset($_POST['aps'])) {
-$aps = $_POST["aps"];
- }
- if(isset($_POST['elev'])) {
-$elev = $_POST["elev"];
- }
- if(isset($_POST['idade'])) {
-$idade = $_POST["idade"];
- }
- if(isset($_POST['det'])) {
-$detalhe = $_POST["det"];
- }
+//     
+// }
+if(isset($_POST['endereco'])) {
+
+if(empty($_POST['endereco'])){
+		$_SESSION['vazio_endereco'] = "Campo endereco é obrigatório";
+		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
+		echo "
+			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
+		";
+	}else{
+        $end = $_POST["endereco"];
+		$_SESSION['value_endereco'] = $end;
+         
+
+
+ }}
+// if(isset($_POST['tipo'])) {
+//$tipo = $_POST["tipo"];
+// }
+// if(isset($_POST['andares'])) {
+//$andares = $_POST["andares"];
+// }
+// if(isset($_POST['aps'])) {
+//$aps = $_POST["aps"];
+// }
+// if(isset($_POST['elev'])) {
+//$elev = $_POST["elev"];
+// }
+// if(isset($_POST['idade'])) {
+//$idade = $_POST["idade"];
+// }
+// if(isset($_POST['det'])) {
+//$detalhe = $_POST["det"];
+// }
  
 $status = 0;
 
 
 
-if(!empty($nome) && !empty($email)){
+if(!empty($nome) && !empty($email) && !empty($cel && !empty($end))){
     
 
 

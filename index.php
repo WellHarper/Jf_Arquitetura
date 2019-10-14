@@ -266,7 +266,11 @@
 					
 					<div class="contato_form grid-8">
 						<label for="nome">Nome *</label>
-						<input type="text" id="nome" name="nome" placeholder="Ex.: Maria Joaquina Rodrigues" autocomplete="off" >
+						<input type="text" id="nome" value="<?php if(isset($_SESSION['value_nome'])) {
+    
+    echo $_SESSION['value_nome'];
+     
+ }  ?>" name="nome" placeholder="Ex.: Maria Joaquina Rodrigues" autocomplete="off" >
 						<?php
 							if(!empty($_SESSION['value_nome'])){
 								//echo "value='".$_SESSION['value_nome']."'";
@@ -305,13 +309,45 @@
 						<input type="text" id="tel" name="tel"  placeholder="Digite seu DDD + número do telefone (opcional)" autocomplete="off">
 	
 						<label for="cel">Celular *</label>
-						<input type="text" id="cel" name="cel"  placeholder="Digite seu DDD + número do celular" autocomplete="off" required>
+						<input type="text" id="cel" name="cel"  placeholder="Digite seu DDD + número do celular" value="<?php if(isset($_SESSION['value_email'])) {
+    
+    echo $_SESSION['value_email'];
+     
+ }  ?>" autocomplete="off">
+						
+						<?php
+							if(!empty($_SESSION['value_cel'])){
+								//echo "value='".$_SESSION['value_email']."'";
+								unset($_SESSION['value_email']);
+							}
+						 ?>
+						 <?php
+							if(!empty($_SESSION['vazio_cel'])){
+								echo "<p style='color: #f00; '>".$_SESSION['vazio_cel']."</p>";
+								unset($_SESSION['vazio_cel']);
+							}
+						 ?>
+						
 						
 						<label for="nomedopredio">Nome/Razão Social do prédio *</label>
-						<input type="text" id="nomedopredio" name="predio"  placeholder="Ex.: Condomínio Vicente de Carvalho" autocomplete="off" required>
+						<input type="text" required id="nomedopredio" name="predio"  placeholder="Ex.: Condomínio Vicente de Carvalho" autocomplete="off" >
 						
 						<label for="tel">Endereço do prédio *</label>
-						<input type="text" id="end" name="endereco"  placeholder="Ex.: Rua São Clemente, 133" autocomplete="off" required>				
+						<input type="text" id="end" name="endereco"  placeholder="Ex.: Rua São Clemente, 133" autocomplete="off" >
+						
+							<?php
+							if(!empty($_SESSION['value_endereco'])){
+								//echo "value='".$_SESSION['value_email']."'";
+								unset($_SESSION['value_endereco']);
+							}
+						 ?>
+						 <?php
+							if(!empty($_SESSION['vazio_endereco'])){
+								echo "<p style='color: #f00; '>".$_SESSION['vazio_endereco']."</p>";
+								unset($_SESSION['vazio_endereco']);
+							}
+						 ?>			
+														    				
 					</div>
 					
 					<div class="contato_form grid-8">
@@ -332,16 +368,16 @@
 	
 					<div class="form_right grid-8">
 							<label for="">Nº de andares *</label>
-							<input type="number" id="numeroAndares" name="andares"  placeholder="Ex.: 10" autocomplete="off" required>
+							<input   required  type="number" id="numeroAndares" name="andares"  placeholder="Ex.: 10" autocomplete="off" >
 	
 							<label for="">Nº de apartamentos ou salas *</label>
-							<input type="number" id="numeroAptoOuSalas" name="aps" placeholder="Ex.: 20" autocomplete="off" required>
+							<input  required type="number" id="numeroAptoOuSalas" name="aps" placeholder="Ex.: 20" autocomplete="off" >
 	
 							<label for="">Nº de elevadores *</label>
-							<input type="number" id="numeroElevadores" name="elev" placeholder="Ex.: 3" autocomplete="off" required>
+							<input required type="number" id="numeroElevadores" name="elev" placeholder="Ex.: 3" autocomplete="off" >
 	
 							<label for="">Idade do prédio *</label>
-							<input type="number" id="idadePredio" name="idade" placeholder="Ex.: 50" autocomplete="off" required>
+							<input required type="number" id="idadePredio" name="idade" placeholder="Ex.: 50" autocomplete="off" >
 					</div>
 					<div class="form_textarea grid-16">
 						<label for="detalhe">Detalhe sua solicitação</label>

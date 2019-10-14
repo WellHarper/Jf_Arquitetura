@@ -80,7 +80,7 @@
 						<td>
 						<!-- Button trigger modal -->
 							
-							<button type="button" class="btn btn-dark ml-4" data-toggle="modal" data-apart="<?php echo $apart ?>" data-and="<?php echo $and ?>" data-tipo="<?php echo $tipo ?>" data-end="<?php echo $end ?>" data-target="#exampleModal" data-predio="<?php echo $nome_predio ?>" data-telefone="<?php echo $telefone ?>" data-celular="<?php echo $cel ?>" data-email="<?php echo $email ?>" data-whatever="<?php echo $nome_cli ?>">+</button>
+							<button type="button" class="btn btn-dark ml-4" data-toggle="modal" data-det="<?php $det ?>" data-idade="<?php echo $idade_predio ?>" data-elev="<?php echo $elev ?>" data-apart="<?php echo $apart ?>" data-and="<?php echo $and ?>" data-tipo="<?php echo $tipo ?>" data-end="<?php echo $end ?>" data-target="#exampleModal" data-predio="<?php echo $nome_predio ?>" data-telefone="<?php echo $telefone ?>" data-celular="<?php echo $cel ?>" data-email="<?php echo $email ?>" data-whatever="<?php echo $nome_cli ?>">+</button>
 
 
 							
@@ -98,6 +98,7 @@
       </div>
       <div class="modal-body">
         <form>
+          <div class="row">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Nome:</label>
             <input type="text" disabled class="form-control" id="recipient-name">
@@ -134,9 +135,22 @@
             <label for="recipient-name" class="col-form-label">Apartamentos ou Salas:</label>
             <input type="text" disabled class="form-control" id="apart-name">
           </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Elevadores</label>
+            <input type="text" disabled class="form-control" id="elev-name">
+          </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Idade do Prédio</label>
+            <input type="text" disabled class="form-control" id="idade-name">
+          </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Detalhes</label>
+            <textarea  class="form-control" id="det-name"  cols="30" rows="10"></textarea>
+          </div>
         
         
-        </form>
+        </div>
+        </form> 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -172,6 +186,9 @@
   var tipo = button.data('tipo')
   var and = button.data('and')
   var apart = button.data('apart')
+  var elev = button.data('elev')
+  var idade = button.data('idade')
+  var det = button.data('det')
   var modal = $(this)
   modal.find('.modal-title').text(recipient)
   modal.find('.modal-body input').val(recipient)
@@ -182,7 +199,10 @@
   modal.find('.modal-body #end-name').val(end)   
   modal.find('.modal-body #tipo-name').val(tipo)
   modal.find('.modal-body #and-name').val(and)
-  modal.find('.modal-body #apart-name').val(apart)        
+  modal.find('.modal-body #apart-name').val(apart)  
+  modal.find('.modal-body #elev-name').val(elev)   
+  modal.find('.modal-body #idade-name').val(idade)
+  modal.find('.modal-body #det-name').val(det)                
         
 })
     
