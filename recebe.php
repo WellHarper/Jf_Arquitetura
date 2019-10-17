@@ -35,8 +35,24 @@ include 'conexao.php';
 
 
 
-// if(isset($_POST['predio'])) {
-//$predio = $_POST["predio"];
+if(isset($_POST['predio'])) {
+if(empty($_POST['predio'])){
+		$_SESSION['vazio_predio'] = "Campo Nome/Razão Social é obrigatório";
+		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
+		echo "
+			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
+		";
+	}else{
+        $predio = $_POST["predio"];
+		$_SESSION['value_predio'] = $predio;
+         
+
+
+ }}
+
+
+
+
 // }
  if(isset($_POST['tel'])) {
  $tel = $_POST["tel"];
@@ -51,7 +67,7 @@ include 'conexao.php';
      
      
  }
-// if(isset($_POST['cel'])) {
+if(isset($_POST['cel'])) {
 
 
      if(empty($_POST['cel'])){
@@ -70,7 +86,7 @@ include 'conexao.php';
  
   $cel = str_replace('-', '', $cel);     
         
-	}
+	}}
     
   
 //     
@@ -90,8 +106,22 @@ if(empty($_POST['endereco'])){
 
 
  }}
-// if(isset($_POST['tipo'])) {
-//$tipo = $_POST["tipo"];
+if(isset($_POST['tipo'])) {
+
+if(empty($_POST['tipo'])){
+		$_SESSION['vazio_tipo'] = "Campo tipo de serviço é obrigatório";
+		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
+		echo "
+			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
+		";
+	}else
+    
+    $tipo = $_POST["tipo"];
+    $_SESSION['value_tipo'] = $tipo;
+    }
+
+
+
 // }
 // if(isset($_POST['andares'])) {
 //$andares = $_POST["andares"];

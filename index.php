@@ -309,16 +309,16 @@
 						<input type="text" id="tel" name="tel"  placeholder="Digite seu DDD + número do telefone (opcional)" autocomplete="off">
 	
 						<label for="cel">Celular *</label>
-						<input type="text" id="cel" name="cel"  placeholder="Digite seu DDD + número do celular" value="<?php if(isset($_SESSION['value_email'])) {
+						<input type="text" id="cel" name="cel"  placeholder="Digite seu DDD + número do celular" value="<?php if(isset($_SESSION['value_cel'])) {
     
-    echo $_SESSION['value_email'];
+    echo $_SESSION['value_cel'];
      
  }  ?>" autocomplete="off">
 						
 						<?php
 							if(!empty($_SESSION['value_cel'])){
 								//echo "value='".$_SESSION['value_email']."'";
-								unset($_SESSION['value_email']);
+								unset($_SESSION['value_cel']);
 							}
 						 ?>
 						 <?php
@@ -330,7 +330,24 @@
 						
 						
 						<label for="nomedopredio">Nome/Razão Social do prédio *</label>
-						<input type="text" required id="nomedopredio" name="predio"  placeholder="Ex.: Condomínio Vicente de Carvalho" autocomplete="off" >
+						<input type="text"  id="nomedopredio" name="predio" value="<?php if(isset($_SESSION['value_predio'])) {
+    
+    echo $_SESSION['value_predio'];
+     
+ }  ?>" placeholder="Ex.: Condomínio Vicente de Carvalho" autocomplete="off" >
+						
+						<?php
+							if(!empty($_SESSION['value_predio'])){
+								//echo "value='".$_SESSION['value_email']."'";
+								unset($_SESSION['value_predio']);
+							}
+						 ?>
+						 <?php
+							if(!empty($_SESSION['vazio_predio'])){
+								echo "<p style='color: #f00; '>".$_SESSION['vazio_predio']."</p>";
+								unset($_SESSION['vazio_predio']);
+							}
+						 ?>
 						
 						<label for="tel">Endereço do prédio *</label>
 						<input type="text" id="end" name="endereco"  placeholder="Ex.: Rua São Clemente, 133" autocomplete="off" >
@@ -353,7 +370,7 @@
 					<div class="contato_form grid-8">
 						<div class="tipo-de-servico">
 							<label for="">Tipo de serviço *</label>
-							<select name="tipo" id="" required>
+							<select value="jose bicha" name="tipo" id="" required>
 								<option value="" disabled selected>Selecione</option>
 								<option value="Autovistoria Predial">Autovistoria Predial</option>
 								<option value="Laudo Técnico">Laudo Técnico</option>
