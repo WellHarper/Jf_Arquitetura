@@ -50,11 +50,22 @@
 					<tr>
 						<?php 
 						include 'conexao.php';
-						$sql = "SELECT * FROM `orcamento`";
+//						$sql = "SELECT * FROM `orcamento`";
+                        
+                        
+                        	
+                        
+                        $sql = "SELECT o.*, t.nome AS 'tipo_nome' 
+                                FROM orcamento o, tipo t 
+                                WHERE o.tipo_id = t.id";
+                        
+                        
+						$busca = mysqli_query($con, $sql);
+                        
 						$busca = mysqli_query($con, $sql);
 						while ($array = mysqli_fetch_array($busca)) {
 						$cod = $array['cod'];
-						$tipo = $array['tipo'];
+						$tipo_nome = $array['tipo_nome'];
 						$nome_cli = $array['nome_cli'];
                         $nome_predio = $array['nome_predio'];    
 						$email = $array ['email'];
@@ -72,7 +83,7 @@
                             
 						?>
 
-						<td><?php echo $tipo ?></td>
+						<td><?php echo $tipo_nome ?></td>
 						<td><?php echo $nome_cli ?></td>
 						<td><?php echo $email ?></td>
 						<td id="tel"><?php echo $telefone ?></td>
