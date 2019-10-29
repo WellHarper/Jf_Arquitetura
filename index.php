@@ -474,7 +474,7 @@
 						
 						
 						<label for="nomedopredio">Nome/Razão Social do prédio *</label>
-						<input type="text"  id="nomedopredio" name="predio" value="<?php if(isset($_SESSION['value_predio'])) {
+						<input type="text"  id="nomedopredio" name="nomedopredio" value="<?php if(isset($_SESSION['value_predio'])) {
     
     echo $_SESSION['value_predio'];
      
@@ -488,8 +488,8 @@
 						 ?>
 						 <?php
 							if(!empty($_SESSION['vazio_predio'])){
-								echo "<p style='color: #f00; '>".$_SESSION['vazio_predio']."</p>";
-								unset($_SESSION['vazio_predio']);
+								echo "<p style='color: #f00; '>".$_SESSION['vazinhoo_predio']."</p>";
+								unset($_SESSION['vazinho_predio']);
 							}
 						 ?>
 						

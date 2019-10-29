@@ -1,4 +1,13 @@
 <?php
+
+//$tipo_id = $_POST['tipo_id'];
+//echo("tipo_id: " . $tipo_id);
+
+//$nomedopredio = $_POST["nomedopredio"];
+//echo("nomedopredio: " . $nomedopredio);
+
+
+
 echo "<link rel='stylesheet' href='css/style.css' />";
 session_start();
 include 'conexao.php';
@@ -90,21 +99,20 @@ if(empty($_POST['tipo_id'])){
     
     $tipo_id = $_POST["tipo_id"];
     $_SESSION['value_tipo'] = $tipo_id;
-    }
-
+}
 
 
 
 if(isset($_POST['nomedopredio'])) {
 if(empty($_POST['nomedopredio'])){
-		$_SESSION['vazio_predio'] = "Campo Nome/Razão Social é obrigatório";
+		$_SESSION['vazinho_predio'] = "Campo Nome/Razão Social é obrigatório";
 		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";
 	}else{
         $nomedopredio = $_POST["nomedopredio"];
-		$_SESSION['value_predio'] = $predio;
+		$_SESSION['value_predio'] = $nomedopredio;
          
 
 
@@ -179,13 +187,22 @@ if(empty($_POST['nomedopredio'])){
  if(isset($_POST['det'])) {
 $detalhe = $_POST["det"];
  }
- 
+
+
 $status = 0;
+
 if(!empty($nome) && !empty($email) && !empty($cel && !empty($end) && !empty($tipo_id) && !empty($nomedopredio) && !empty($andares) && !empty($aps) && !empty($idade) )){
+
+    
     
 $sql = "INSERT INTO orcamento VALUES (null, '{$tipo_id}', '{$nome}','{$nomedopredio}', '{$email}', '{$andares}','{$aps}','{$end}','{$elev}','{$idade}','{$tel}','{$cel}','{$detalhe}', '{$status}')";
 $msg = (mysqli_query($con, $sql)) ? "<h2 class='enviado-sucesso'>Enviado com sucesso!</h2>" : " <h2 class='nao-enviado'>Infelizmente houve um erro!</h2>";
+    
+
+//echo($sql);
+    
 header("location:msg.php?msg=".$msg);
+
 }
    
     

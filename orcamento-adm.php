@@ -55,9 +55,11 @@
                         
                         	
                         
-                        $sql = "SELECT o.*, t.nome AS 'tipo_nome' 
-                                FROM orcamento o, tipo t 
-                                WHERE o.tipo_id = t.id";
+//                        $sql = "SELECT o.*, t.nome AS 'tipo_nome' 
+//                                FROM orcamento o, tipo t 
+//                                WHERE o.tipo_id = t.id";
+                        $sql = "SELECT * FROM orcamento o1 INNER JOIN tipo t2 on o1.tipo_id = t2.id";
+
                         
                         
 						$busca = mysqli_query($con, $sql);
@@ -65,7 +67,7 @@
 						$busca = mysqli_query($con, $sql);
 						while ($array = mysqli_fetch_array($busca)) {
 						$cod = $array['cod'];
-						$tipo_nome = $array['tipo_nome'];
+						$tipo_nome = $array['nome'];
 						$nome_cli = $array['nome_cli'];
                         $nome_predio = $array['nome_predio'];    
 						$email = $array ['email'];
@@ -91,7 +93,7 @@
 						<td>
 						<!-- Button trigger modal -->
 							
-							<button type="button" class="btn btn-dark ml-4" data-toggle="modal" data-det="<?php $det ?>" data-idade="<?php echo $idade_predio ?>" data-elev="<?php echo $elev ?>" data-apart="<?php echo $apart ?>" data-and="<?php echo $and ?>" data-tipo="<?php echo $tipo ?>" data-end="<?php echo $end ?>" data-target="#exampleModal" data-predio="<?php echo $nome_predio ?>" data-telefone="<?php echo $telefone ?>" data-celular="<?php echo $cel ?>" data-email="<?php echo $email ?>" data-whatever="<?php echo $nome_cli ?>">+</button>
+							<button type="button" class="btn btn-dark ml-4" data-toggle="modal" data-det="<?php $det ?>" data-idade="<?php echo $idade_predio ?>" data-elev="<?php echo $elev ?>" data-apart="<?php echo $apart ?>" data-and="<?php echo $and ?>" data-tipo="<?php echo $tipo_nome ?>" data-end="<?php echo $end ?>" data-target="#exampleModal" data-predio="<?php echo $nome_predio ?>" data-telefone="<?php echo $telefone ?>" data-celular="<?php echo $cel ?>" data-email="<?php echo $email ?>" data-whatever="<?php echo $nome_cli ?>">+</button>
 
 
 							
