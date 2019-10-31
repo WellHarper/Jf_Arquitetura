@@ -450,7 +450,11 @@
 						 ?>
 	
 						<label for="tel">Telefone</label>
-						<input type="text" id="tel" name="tel"  placeholder="Digite seu DDD + número do telefone (opcional)" autocomplete="off">
+						<input type="text" id="tel" value="<?php if(isset($_SESSION['value_tel'])) {
+    
+    echo $_SESSION['value_tel'];
+     
+ }  ?>" name="tel"  placeholder="Digite seu DDD + número do telefone (opcional)" autocomplete="off">
 	
 						<label for="cel">Celular *</label>
 						<input type="text" id="cel" name="cel"  placeholder="Digite seu DDD + número do celular" value="<?php if(isset($_SESSION['value_cel'])) {
@@ -479,19 +483,21 @@
     echo $_SESSION['value_predio'];
      
  }  ?>" placeholder="Ex.: Condomínio Vicente de Carvalho" autocomplete="off" >
-						
 						<?php
 							if(!empty($_SESSION['value_predio'])){
 								//echo "value='".$_SESSION['value_email']."'";
-								unset($_SESSION['value_predio']);
+								unset($_SESSION['value_endereco']);
 							}
 						 ?>
 						 <?php
 							if(!empty($_SESSION['vazio_predio'])){
-								echo "<p style='color: #f00; '>".$_SESSION['vazinhoo_predio']."</p>";
-								unset($_SESSION['vazinho_predio']);
+								echo "<p style='color: #f00; '>".$_SESSION['vazio_predio']."</p>";
+								unset($_SESSION['vazio_predio']);
 							}
-						 ?>
+						 ?>			
+
+
+
 						
 						<label for="tel">Endereço do prédio *</label>
 						<input type="text" value="<?php if(isset($_SESSION['value_endereco'])) {

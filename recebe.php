@@ -47,6 +47,7 @@ include 'conexao.php';
      
      $tel = str_replace('-', '', $tel);
      
+     $_SESSION['value_tel'] = $tel;
      
  }
  if(isset($_POST['cel'])) {
@@ -71,7 +72,7 @@ include 'conexao.php';
 
 if(isset($_POST['endereco'])) {
 if(empty($_POST['endereco'])){
-		$_SESSION['vazio_endereco'] = "Campo endereco é obrigatório";
+		$_SESSION['vazio_endereco'] = "Campo Endereco é obrigatório";
 		$url = 'http://localhost/Jf_arquitetura/#orcamento';
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
@@ -105,7 +106,7 @@ if(empty($_POST['tipo_id'])){
 
 if(isset($_POST['nomedopredio'])) {
 if(empty($_POST['nomedopredio'])){
-		$_SESSION['vazinho_predio'] = "Campo Nome/Razão Social é obrigatório";
+		$_SESSION['vazio_predio'] = "Campo Nome/Razão Social é obrigatório";
 		$url = 'http://localhost/Jf_Arquitetura/#orcamento';
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
