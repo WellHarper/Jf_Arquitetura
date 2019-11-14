@@ -1,13 +1,6 @@
-
-
- <?php
-	session_start();
- ?>
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php session_start(); ?>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,27 +16,37 @@
   <script>
     document.documentElement.classList.add("js");
   </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#telefone-name").mask("(000)0000-0000");
+      $("#celular-name").mask("(000)00000-0000");
+    })
+  </script>
   <title>JF Arquitetura</title>
 </head>
+
 <body>
-	
-		<header>
-			<div id="index" class="logo">
-				<img src="img/logo.jpg" alt="JF Arquitetura">
-			</div>
-			<nav class="nav-bar abs-pos">
-				<ul>
-					<li class="int-link"><a href="#index">Início</a></li>
-					<li class="int-link"><a href="#quem-somos">Quem Somos</a></li>
-					<li class="int-link"><a href="#area-de-atuacao">Área de Atuação</a></li>
-					<li class="int-link"><a href="#servicos-realizados">Serviços Realizados</a></li>
-					<li class="int-link"><a href="#orcamento">Orçamento</a></li>
-			</ul>
-			</nav>
-		</header>
-		<section class="ghost"></section>
-		<main>
-			<section id="inicio">
+  <header>
+    <div id="index" class="logo">
+      <img src="img/logo.jpg" alt="JF Arquitetura" />
+    </div>
+    <nav class="nav-bar abs-pos">
+      <ul>
+        <li class="int-link"><a href="#index">Início</a></li>
+        <li class="int-link"><a href="#quem-somos">Quem Somos</a></li>
+        <li class="int-link">
+          <a href="#area-de-atuacao">Área de Atuação</a>
+        </li>
+        <li class="int-link">
+          <a href="#servicos-realizados">Serviços Realizados</a>
+        </li>
+        <li class="int-link"><a href="#orcamento">Orçamento</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="ghost"></section>
+  <main>
+    <section id="inicio">
       <div id="wrapper">
         <div id="slider-area" class="owl-carousel">
           <div style="background-image: url(img/slide1.jpg)"></div>
@@ -62,20 +65,28 @@
       </div>
     </section>
 
-		<section id="quem-somos">
-			<div class="container">
-					<h1 class="titulo-branco">Quem Somos</h1>
-						<div class="grid-8"><img src="img/exemplo.png" alt="Funcionários"></div>
-						<div class="grid-8 quem-somos-texto">
-							<h2>Nossa História</h2>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat mattis ante fringilla ultrices. Donec id lectus vel elit gravida mattis. Phasellus rhoncus nibh non mauris aliquam, a vestibulum ligula condimentum. Sed rhoncus maximus nulla. Sed enim justo, aliquet a laoreet sollicitudin, lobortis vel diam. Suspendisse hendrerit massa in dapibus egestas. Nulla pulvinar ultricies est, vel porta dui commodo at.
-							</p>
-						</div>
-				</div>
-		</section>
-		<section id="area-de-atuacao">
-      <div class="container">
+    <section id="quem-somos">
+      <div class="container_grid">
+        <h1 class="titulo-branco">Quem Somos</h1>
+        <div class="grid-8">
+          <img src="img/exemplo.png" alt="Funcionários" />
+        </div>
+        <div class="grid-8 quem-somos-texto">
+          <h2>Nossa História</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+            consequat mattis ante fringilla ultrices. Donec id lectus vel elit
+            gravida mattis. Phasellus rhoncus nibh non mauris aliquam, a
+            vestibulum ligula condimentum. Sed rhoncus maximus nulla. Sed enim
+            justo, aliquet a laoreet sollicitudin, lobortis vel diam.
+            Suspendisse hendrerit massa in dapibus egestas. Nulla pulvinar
+            ultricies est, vel porta dui commodo at.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="area-de-atuacao">
+      <div class="container_grid">
         <h1 class="titulo">Área de Atuação</h1>
         <ul class="cards">
           <li class="grid-1-3">
@@ -301,9 +312,8 @@
         </ul>
       </div>
     </section>
-		<section id="servicos-realizados">
-      <!--  Falar com a Luana sobre isso daqui URGENTE / tem coments no style.css  -->
-      <div class="container">
+    <section id="servicos-realizados">
+      <div class="container_grid">
         <h1 class="titulo-branco">Serviços Realizados</h1>
         <ul class="album">
           <li class="album-molde grid-1-3">
@@ -318,18 +328,21 @@
               <div class="album-text ">Avaliação feita em Niteroí</div>
             </div>
           </li>
+<!--
           <li class="album-molde grid-1-3">
             <img class="album-image" src="img/album/niteroi/3.jpg" />
             <div class="album-hover">
               <div class="album-text ">Avaliação feita em Niteroí</div>
             </div>
           </li>
+-->
           <li class="album-molde grid-1-3">
             <img class="album-image" src="img/album/barra-da-tijuca/1.jpg" />
             <div class="album-hover">
               <div class="album-text ">Avaliação em Perícia de Imóveis na Barra da Tijuca</div>
             </div>
           </li>
+<!--
           <li class="album-molde grid-1-3">
             <img class="album-image" src="img/album/barra-da-tijuca/2.jpg" />
             <div class="album-hover">
@@ -342,30 +355,36 @@
               <div class="album-text ">Avaliação em Perícia de Imóveis na Barra da Tijuca</div>
             </div>
           </li>
+-->
           <li class="album-molde grid-1-3">
             <img class="album-image" src="img/album/barra-da-tijuca/4.jpg" />
             <div class="album-hover">
               <div class="album-text ">Avaliação em Perícia de Imóveis na Barra da Tijuca</div>
             </div>
           </li>
+<!--
           <li class="album-molde grid-1-3">
             <img class="album-image" src="img/album/barra-da-tijuca/5.jpg" />
             <div class="album-hover">
               <div class="album-text ">Avaliação em Perícia de Imóveis na Barra da Tijuca</div>
             </div>
           </li>
+-->
           <li class="album-molde grid-1-3">
             <img class="album-image" src="img/album/recreio/1.jpg" />
             <div class="album-hover">
               <div class="album-text ">Avaliação em Perícia de Imóveis no Recreio</div>
             </div>
           </li>
+<!--
           <li class="album-molde grid-1-3">
             <img class="album-image" src="img/album/recreio/2.jpg" />
             <div class="album-hover">
               <div class="album-text ">Avaliação em Perícia de Imóveis no Recreio</div>
             </div>
           </li>
+-->
+<!--
           <li class="album-molde grid-1-3">
             <img class="album-image" src="img/album/recreio/3.jpg" />
             <div class="album-hover">
@@ -390,6 +409,7 @@
               <div class="album-text ">Avaliação em Perícia de Imóveis no Recreio</div>
             </div>
           </li>
+-->
           <li class="album-molde grid-1-3">
             <img class="album-image" src="img/album/recreio/7.jpg" />
             <div class="album-hover">
@@ -400,22 +420,21 @@
         </ul>
       </div>
     </section>
-		<section id="orcamento">
-				<div class="container">
-					<h1 class="titulo">Orçamento</h1>
-					
-					<h2 class="subtitulo-preto">Atendemos apenas no Rio e Grande Rio</h2>
-					
-					<form action="recebe.php" method="post">
-					
-					<div class="contato_form grid-8">
-						<label for="nome">Nome *</label>
-						<input type="text" id="nome" value="<?php if(isset($_SESSION['value_nome'])) {
+    <section id="orcamento">
+      <div class="container_grid">
+        <h1 class="titulo">Orçamento</h1>
+
+        <h2 class="subtitulo-preto">Atendemos apenas no Rio e Grande Rio</h2>
+
+        <form action="recebe.php" method="post">
+          <div class="contato_form grid-8">
+            <label for="nome">Nome *</label>
+            <input class="input_form" type="text" id="nome"  value="<?php if(isset($_SESSION['value_nome'])) {
     
     echo $_SESSION['value_nome'];
      
- }  ?>" name="nome" placeholder="Ex.: Maria Joaquina Rodrigues" autocomplete="off" >
-						<?php
+ }  ?>" name="nome" placeholder="Ex.: Maria Joaquina Rodrigues" />
+            <?php
 							if(!empty($_SESSION['value_nome'])){
 								//echo "value='".$_SESSION['value_nome']."'";
 								unset($_SESSION['value_nome']);
@@ -429,14 +448,14 @@
                                 echo"<br>";
 							}
 						 ?>
-						
-						<label for="email">E-mail *</label>
-						<input type="email" id="email" name="email" placeholder="Ex.: seuemail@gmail.com" value="<?php if(isset($_SESSION['value_email'])) {
+
+            <label for="email">E-mail *</label>
+            <input class="input_form" type="email" id="email" value="<?php if(isset($_SESSION['value_email'])) {
     
     echo $_SESSION['value_email'];
      
- }  ?>" autocomplete="off">
-						<?php
+ }  ?>" name="email" placeholder="Ex.: seuemail@gmail.com" />
+            <?php
 							if(!empty($_SESSION['value_email'])){
 								//echo "value='".$_SESSION['value_email']."'";
 								unset($_SESSION['value_email']);
@@ -448,22 +467,21 @@
 								unset($_SESSION['vazio_email']);
 							}
 						 ?>
-	
-						<label for="tel">Telefone</label>
-						<input type="text" id="tel" value="<?php if(isset($_SESSION['value_tel'])) {
+
+            <label for="tel">Telefone</label>
+            <input class="input_form" type="text" value="<?php if(isset($_SESSION['value_tel'])) {
     
     echo $_SESSION['value_tel'];
      
- }  ?>" name="tel"  placeholder="Digite seu DDD + número do telefone (opcional)" autocomplete="off">
-	
-						<label for="cel">Celular *</label>
-						<input type="text" id="cel" name="cel"  placeholder="Digite seu DDD + número do celular" value="<?php if(isset($_SESSION['value_cel'])) {
+ }  ?>" id="tel" name="tel" placeholder="Digite seu DDD + número do telefone (opcional)" />
+
+            <label for="cel">Celular *</label>
+            <input class="input_form" type="text"  id="cel" value="<?php if(isset($_SESSION['value_cel'])) {
     
     echo $_SESSION['value_cel'];
      
- }  ?>" autocomplete="off">
-						
-						<?php
+ }  ?>" name="cel" placeholder="Digite seu DDD + número do celular" autocomplete="off" />
+            <?php
 							if(!empty($_SESSION['value_cel'])){
 								//echo "value='".$_SESSION['value_email']."'";
 								unset($_SESSION['value_cel']);
@@ -475,18 +493,17 @@
 								unset($_SESSION['vazio_cel']);
 							}
 						 ?>
-						
-						
-						<label for="nomedopredio">Nome/Razão Social do prédio *</label>
-						<input type="text"  id="nomedopredio" name="nomedopredio" value="<?php if(isset($_SESSION['value_predio'])) {
+
+            <label for="nomedopredio">Nome/Razão Social do prédio *</label>
+            <input class="input_form" type="text" value="<?php if(isset($_SESSION['value_predio'])) {
     
     echo $_SESSION['value_predio'];
      
- }  ?>" placeholder="Ex.: Condomínio Vicente de Carvalho" autocomplete="off" >
-						<?php
+ }  ?>" id="nomedopredio" name="nomedopredio" placeholder="Ex.: Condomínio Vicente de Carvalho" />
+            <?php
 							if(!empty($_SESSION['value_predio'])){
 								//echo "value='".$_SESSION['value_email']."'";
-								unset($_SESSION['value_endereco']);
+								unset($_SESSION['value_predio']);
 							}
 						 ?>
 						 <?php
@@ -496,17 +513,13 @@
 							}
 						 ?>			
 
-
-
-						
-						<label for="tel">Endereço do prédio *</label>
-						<input type="text" value="<?php if(isset($_SESSION['value_endereco'])) {
+            <label for="endereco">Endereço do prédio *</label>
+            <input class="input_form" type="text" id="end" value="<?php if(isset($_SESSION['value_endereco'])) {
     
     echo $_SESSION['value_endereco'];
      
- }  ?>" id="end" name="endereco"  placeholder="Ex.: Rua São Clemente, 133" autocomplete="off" >
-						
-							<?php
+ }  ?>"  name="endereco" placeholder="Ex.: Rua São Clemente, 133" />
+         <?php
 							if(!empty($_SESSION['value_endereco'])){
 								//echo "value='".$_SESSION['value_email']."'";
 								unset($_SESSION['value_endereco']);
@@ -518,10 +531,11 @@
 								unset($_SESSION['vazio_endereco']);
 							}
 						 ?>			
-														    				
-					</div>
-					
-					  <div class="contato_form grid-8">
+         
+         
+          </div>
+
+          <div class="contato_form grid-8">
             <div class="tipo-de-servico">
               <label for="">Tipo de serviço *</label>
               <select class="form-control" name="tipo_id" id="tipo_id" placeholder="" name="tipo_id">
@@ -546,16 +560,15 @@
               </select>
             </div>
           </div>
-	
-					<div class="form_right grid-8">
-							<label for="">Nº de andares *</label>
-							<input     type="number" id="numeroAndares" value="<?php if(isset($_SESSION['value_andares'])) {
+
+          <div class="form_right grid-8">
+            <label for="">Nº de andares *</label>
+            <input class="input_form" type="number" min="0" value="<?php if(isset($_SESSION['value_andares'])) {
     
     echo $_SESSION['value_andares'];
      
- }  ?>" name="andares"  placeholder="Ex.: 10" autocomplete="off" >
-							
-							
+ }  ?>" id="numeroAndares" name="andares" placeholder="Ex.: 10"  />
+            
 							<?php
 							if(!empty($_SESSION['value_andares'])){
 								//echo "value='".$_SESSION['value_email']."'";
@@ -568,16 +581,14 @@
 								unset($_SESSION['vazio_andares']);
 							}
 						 ?>			
-							
-	
-							<label for="">Nº de apartamentos ou salas *</label>
-							<input   type="number" id="numeroAptoOuSalas" value="<?php if(isset($_SESSION['value_apart'])) {
+
+            <label for="">Nº de apartamentos ou salas *</label>
+            <input class="input_form" type="number" value="<?php if(isset($_SESSION['value_apart'])) {
     
     echo $_SESSION['value_apart'];
      
- }  ?>" name="aps" placeholder="Ex.: 20" autocomplete="off" >
-							
-							<?php
+ }  ?>" min="0" id="numeroAptoOuSalas" name="aps" placeholder="Ex.: 20" autocomplete="off"  />
+           <?php
 							if(!empty($_SESSION['value_apart'])){
 								//echo "value='".$_SESSION['value_email']."'";
 								unset($_SESSION['value_apart']);
@@ -589,16 +600,15 @@
 								unset($_SESSION['vazio_apart']);
 							}
 						 ?>			
-							
-	
-							<label for="">Nº de elevadores *</label>
-							<input  type="number" id="numeroElevadores" value="value="<?php if(isset($_SESSION['value_elev'])) {
+            
+
+            <label for="">Nº de elevadores *</label>
+            <input class="input_form" type="number" value="<?php if(isset($_SESSION['value_elev'])) {
     
     echo $_SESSION['value_elev'];
      
- }  ?>" " name="elev" placeholder="Ex.: 3" autocomplete="off" >
-							
-							<?php
+ }  ?>" min="0" id="numeroElevadores" name="elev" placeholder="Ex.: 3" autocomplete="off" />
+            <?php
 							if(!empty($_SESSION['value_elev'])){
 								//echo "value='".$_SESSION['value_email']."'";
 								unset($_SESSION['value_elev']);
@@ -610,22 +620,15 @@
 								unset($_SESSION['vazio_elev']);
 							}
 						 ?>			
-	
-							<label for="">Idade do prédio *</label>
-							<input  type="number" id="idadePredio" value="<?php if(isset($_SESSION['value_idade'])) {
+            
+
+            <label for="">Idade do prédio *</label>
+            <input class="input_form" type="number" value="<?php if(isset($_SESSION['value_idade'])) {
     
     echo $_SESSION['value_idade'];
      
- }  ?>"<?php if(isset($_SESSION['value_idade'])) {
-    
-    echo $_SESSION['value_idade'];
-     
- }  ?>"" name="idade" placeholder="Ex.: 50" autocomplete="off" >
-					</div>
-					
-					
-						
-							<?php
+ }  ?>" min="0" id="idadePredio" name="idade" placeholder="Ex.: 50" autocomplete="off" />
+         <?php
 							if(!empty($_SESSION['value_idade'])){
 								//echo "value='".$_SESSION['value_email']."'";
 								unset($_SESSION['value_idade']);
@@ -637,23 +640,23 @@
 								unset($_SESSION['vazio_idade']);
 							}
 						 ?>			
-					
-					<div class="form_textarea grid-16">
-						<label for="detalhe">Detalhe sua solicitação</label>
-						<textarea id="detalhe" name="det" placeholder="Descreva aqui com detalhes a sua solicitação" autocomplete="off"></textarea>
-					</div>
-					<button type="submit" class="btn grid-4">Enviar</button>	
-					</form>
-				</div>	
-			</section>
-			<footer class="footer">
-						<p>JF Arquitetura - Alguns direitos reservados</p>
-				</footer>
- </main>
-<script type="text/javascript" src="js/simple-slide"></script>
-<script src="https://kit.fontawesome.com/503bd455be.js" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/script.js"></script>  
+          </div>
+          <div class="form_textarea grid-16">
+            <label for="detalhe">Detalhe sua solicitação</label>
+            <textarea id="detalhe" name="det" maxlength="255" placeholder="Descreva aqui com detalhes a sua solicitação"></textarea>
+          </div>
+          <button type="submit" class="botao grid-4">Enviar</button>
+        </form>
+      </div>
+    </section>
+    <footer class="_footer">
+      <p>JF Arquitetura - Todos os direitos reservados</p>
+      <p>Feito com <span class="heart">❤</span> pelo Grupo D - 2019 CSI</p>
+    </footer>
+  </main>
+  <script type="text/javascript" src="js/simple-slide"></script>
+  <script src="https://kit.fontawesome.com/503bd455be.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 </body>
+
 </html>
-
-

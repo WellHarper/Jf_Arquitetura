@@ -20,9 +20,9 @@
       <div class="logo">
         <img src="img/logo.jpg" alt="JF Arquitetura">
       </div>
-      <div class="container">
+      <div class="container_grid">
         <div class="enviado">
-          <h2 class="enviado-mensagem"><?php echo $msg; ?>!</h2>
+          <?php echo $msg; ?>
           <a href="index.php" class="voltar">Voltar para página inicial</a>
         </div>
       </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Out-2019 às 07:34
+-- Generation Time: 14-Nov-2019 às 15:49
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.3
 
@@ -42,38 +42,28 @@ CREATE TABLE `orcamento` (
   `telefone` char(12) NOT NULL,
   `cel` char(12) NOT NULL,
   `detalhes` varchar(255) DEFAULT NULL,
-  `status` tinyint(1) DEFAULT '0'
+  `status` enum('Pendente','Feito') DEFAULT NULL,
+  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `observacoes` varchar(900) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `orcamento`
 --
 
-INSERT INTO `orcamento` (`cod`, `tipo_id`, `nome_cli`, `nome_predio`, `email`, `andares`, `apart_salas`, `endereco`, `elevadores`, `idade_pred`, `telefone`, `cel`, `detalhes`, `status`) VALUES
-(1, 1, 'Vanisher Oliver da Silva', 'Condomínio Laranjeiras', 'vanisher@gmail.com', 10, 20, 'Rua das Laranjeiras, 231', 2, 30, '21 32058500', '21 974563025', '', 0),
-(17, 8, 'Wellerson', 'hshdshd', 'welleroson@ghj.com', 5, 3, 'ojgjsefjs', 5, 2, '21 22222222', '21 987655433', 'drhry', 0);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `servicos`
---
-
-CREATE TABLE `servicos` (
-  `id` varchar(255) NOT NULL,
-  `titulo` varchar(255) DEFAULT NULL,
-  `descricao` varchar(1000) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `servicos`
---
-
-INSERT INTO `servicos` (`id`, `titulo`, `descricao`) VALUES
-('', 'Autovistoria Predial', 'A vistoria técnica, também conhecida como autovistoria, é uma inspeção predial realizada por profissional legalmente habilitado, com objetivo de avaliar o estado geral da edificação no que diz respeito a sua conservação, estabilidade e segurança.'),
-('', 'Vistoria Locativa', 'A Vistoria Locativa registra para o locador e locatário o estado imóvel antes e depois do período de locação. Evita dúvidas e incertezas que normalmente ocorrem quando é feita a vistoria e possibilita a comparação com o estado inicial do imóvel.'),
-('', 'Laudo Técnico', 'É de fundamental importância porque possibilita detectar a ocorrência de possíveis patologias construtivas nas diversas edificações, independente da idade do imóvel. Nele são apontados todos os problemas que estejam ou venham a causar danos de natureza materiais, pessoas e de responsabilidades civis.\r\n\r\n'),
-('4', 'Laudo Técnico de Recebimento de Obra', 'Trata-se de uma vistoria que tem como objetivo formalizar a entrega da obra junto ao construtor, mediante verificação do seu estado construtivo, bem como de seus sistemas instalados, de forma a analisar a sua conformidade técnica com projetos, memoriais descritivos e demais documentação apresentada previamente.');
+INSERT INTO `orcamento` (`cod`, `tipo_id`, `nome_cli`, `nome_predio`, `email`, `andares`, `apart_salas`, `endereco`, `elevadores`, `idade_pred`, `telefone`, `cel`, `detalhes`, `status`, `data`, `observacoes`) VALUES
+(1, 1, 'Pelé', 'fojdfjj', 'wellersob@oi.com', 2, 3, 'qjqofjefjehj', 3, 3, '21 45555555', '21 894789847', 'hthtrthj', 'Feito', '2019-11-14 14:47:17', 'Cléo Severo Linda'),
+(2, 1, 'Igulin', 'EFWERGRE', 'ugulin@lin.com', 2, 5, 'IOSDVJFV', 2, 2, '21 22222222', '21 55555555', 'GGRHTHTRHTH', 'Pendente', '2019-11-06 00:41:07', NULL),
+(3, 8, 'Marcus Vinicius Aragão', 'Condomínio Cezar Maça', 'marcustec.inf@gmail.com', 3, 2, 'Rua Maça, 78', 1, 25, '21 34566778', '21 993339243', 'Nada a declarar maça', 'Feito', '2019-11-06 00:41:07', NULL),
+(4, 1, 'Victoria Marques', 'Condomínio Beatriz', 'vicck.rj@gmail.com', 5, 8, 'Rua São Bento, 23', 4, 6, '2132043385', '21979067074', 'Teste teste teste ç$5', 'Pendente', '2019-11-06 00:41:07', NULL),
+(5, 1, 'wellerson', 'Condomínio Beatriz', 'beatriz@btttgeatriz.com', 4, 44, 'Beatriz, 123', 444, 44444, '2132043385', '22222222', 'wtrwete', 'Pendente', '2019-11-06 00:42:50', NULL),
+(6, 6, 'teste1', 'Condomínio Beatriz', 'teste1@teste.com', 4, 2, 'Beatriz, 123', 2, 2, '2132043385', '2158748987', 'teste3333333333333333333333', 'Pendente', '2019-11-06 00:44:10', NULL),
+(7, 9, 'Francisco Marcos', 'Condomínio São Paulo', 'marcos@gmail.com', 1, 1, 'São Jorge, 1230', 1, 20, '21 32058478', '21 978459874', 'teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste tes', 'Feito', '2019-11-06 18:09:31', NULL),
+(8, 9, 'Marlene', 'Condomínio Botafogo', 'victoria@victoria.com', 2, 2, 'teste', 2, 2, '', '2185748987', 'teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2 teste 2', 'Pendente', '2019-11-06 18:11:28', NULL),
+(9, 1, 'roger', 'Casa do Roger', 'vanisher@gmail.com', 2, 2, 'rua do roger', 2, 2, '21 25555555', '21 988888888', '', 'Pendente', '2019-11-14 14:29:27', 'roger é um cara bem ruim'),
+(10, 8, 'Cléo Harper', 'casa da cléo', 'cleo@harpermail.com', 2, 2, 'rua da cléo', 2, 2, '21 2565555', '21 988888888', 'testando cléo', 'Pendente', '2019-11-08 04:42:57', NULL),
+(11, 9, 'seu', 'rua do cara', 'ze@gmail.com', 2, 5, 'casa', 2, 2, '21 23433454', '21 988988989', '', 'Feito', '2019-11-14 14:47:23', NULL),
+(12, 1, 'roger', 'casa', 'vanisher@gmail.com', 2, 5, 'casa', 2, 2, '021798914231', '021898582355', 'vgrg', 'Feito', '2019-11-14 14:47:24', NULL);
 
 -- --------------------------------------------------------
 
@@ -128,7 +118,8 @@ INSERT INTO `usuario` (`usuario_id`, `usuario`, `senha`) VALUES
 -- Indexes for table `orcamento`
 --
 ALTER TABLE `orcamento`
-  ADD PRIMARY KEY (`cod`);
+  ADD PRIMARY KEY (`cod`),
+  ADD KEY `tipo_id` (`tipo_id`);
 
 --
 -- Indexes for table `tipo`
@@ -150,19 +141,29 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `orcamento`
 --
 ALTER TABLE `orcamento`
-  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `orcamento`
+--
+ALTER TABLE `orcamento`
+  ADD CONSTRAINT `orcamento_ibfk_1` FOREIGN KEY (`tipo_id`) REFERENCES `tipo` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
